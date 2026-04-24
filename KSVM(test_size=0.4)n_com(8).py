@@ -15,7 +15,7 @@ X[:, 1:15] = imputer.transform(X[:, 1:15])
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.4, random_state = 0) 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.6, random_state = 0) 
 
 
 # Feature Scaling
@@ -27,7 +27,7 @@ X_test = sc.transform(X_test)
 #PCA
 from sklearn.decomposition import PCA
 
-pca = PCA(n_components=8)
+pca = PCA(n_components=2)
 
 X_train = pca.fit_transform(X_train)
 X_test = pca.transform(X_test)
